@@ -1,0 +1,37 @@
+{
+    "name": "FILTER-BOT",
+    "description": "This is auto filter bot with many advanced features.",
+    "stack": "container",
+    "keywords": [
+      "telegram",
+      "auto-filter",
+      "filter",
+      "best",
+      "indian",
+      "pyrogram",
+      "media",
+      "search",
+      "channel",
+      "index",
+      "inline"
+    ],
+    "website": "https://github.com/Nrgodara/Modified-Movie-Filter",
+    "repository": "https://github.com/Nrgodara/Modified-Movie-Filter",
+    "env": {
+        "BOT_TOKEN": {
+            "description": "Your bot token.",
+            "required": false
+        },
+        
+    },
+    "addons": [],
+    "buildpacks": [{
+        "url": "heroku/python"
+    }],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "eco"
+        }
+    }
+}
