@@ -1,7 +1,8 @@
 FROM python:3.12-slim
 
-# Install necessary system dependencies, including git
-RUN apt-get update && apt-get install -y git \
+# Install required system dependencies
+RUN apt-get update && apt-get install -y \
+    git gcc libjpeg-dev zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
@@ -9,12 +10,12 @@ WORKDIR /app
 # Copy the application code
 COPY . /app/
 
-# Install Python dependencies
+# Upgrade pip and install Python dependencies
 RUN pip install --upgrade pip \
     && pip install -r requirements.txt
 
-# Expose the port
+# Expose the port your application runs on
 EXPOSE 8080
 
-# Define the command to run the bot
+# Define the default command
 CMD ["python", "bot.py"]
