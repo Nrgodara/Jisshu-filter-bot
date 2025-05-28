@@ -200,7 +200,7 @@ def list_to_str(k):
         return ', '.join(str(item) for item in k)
 
 
-async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False , pm_mode=False):
+async def get_shortlink(link, grp_id, is_second_shortener=False, is_third_shortener=False , pm_mode=True):
     if not pm_mode:
         settings = await get_settings(grp_id)
     else:
